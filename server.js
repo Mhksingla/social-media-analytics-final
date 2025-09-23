@@ -30,7 +30,9 @@ app.use(express.json());
 // const authRoutes = require('./routes/authRoutes');
 // app.use('/api/auth', authRoutes); // Mounting router middleware correctly
 // server.js mein add karna hai
+app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/data', require('./routes/dataCollection'));
+app.use('/api/analytics', require('./routes/analytics'));
 
 
 // Health check route for server status

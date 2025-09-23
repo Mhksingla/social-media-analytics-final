@@ -1,6 +1,6 @@
-// models/index.js
+// 
 const InstagramAccount = require('./InstagramAccount');
-const InstagramPost = require('./InstagramPost');
+const  InstagramPost = require('./InstagramPost');
 
 module.exports = {
     InstagramAccount,
