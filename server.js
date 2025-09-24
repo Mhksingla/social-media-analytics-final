@@ -2,10 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const compression = require('compression');
-const connectDB = require('./config/database');
 
 // Load environment variables
 dotenv.config();
+
+const connectDB = require('./config/database');
 
 // Connect to MongoDB
 connectDB();
@@ -50,6 +51,9 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Internal Server Error' });
 });
+
+app.use('/api/debug', require('./routes/debug'));
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
